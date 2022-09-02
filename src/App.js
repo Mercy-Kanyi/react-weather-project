@@ -1,12 +1,15 @@
 import './App.css';
+import Weather from './Weather';
 
 function App() {
   return (
     <div className="App">
-      <h1>Weatherrrrr</h1>
-      <footer>
-        <a href="www.shecodes.io">Open-source code</a> by Mercy Kanyi
-      </footer>
+      <div className="container">
+        <Weather />
+        <footer>
+          <a href="www.shecodes.io">Open-source code</a> by Mercy Kanyi
+        </footer>
+      </div>
     </div>
   );
 }
