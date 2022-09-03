@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios"
 import { ProgressBar } from "react-loader-spinner";
+import Dateupdate from "./Dateupdate";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -14,7 +15,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       city: response.data.name,
-      date: "Sunday 08:00",
+      date: new Date(response.data.dt * 1000),
       iconlink: "https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
     })
 
@@ -43,7 +44,6 @@ export default function Weather(props) {
         </div>
       </form>
       <h1 className="mt-3">{weatherInfo.city}</h1>
-      <div></div>
       <img src={weatherInfo.iconlink} alt={weatherInfo.description} />
       <span className="temperature">{Math.round(weatherInfo.temperature)}</span>
       <span className="units">°C</span>
@@ -56,7 +56,9 @@ export default function Weather(props) {
         </div>
         <div className="col-6">
           <ul>
-            <li>{weatherInfo.date}</li>
+            <li>
+              <Dateupdate date={weatherInfo.date} />
+            </li>
             <li className="text-capitalize">{weatherInfo.description}</li>
           </ul>
         </div>
