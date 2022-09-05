@@ -17,7 +17,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
-      iconlink: "https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png",
+      iconlink: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
   
