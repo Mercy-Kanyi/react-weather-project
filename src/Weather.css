@@ -46,4 +46,5 @@
 
 .Weather canvas {
 	margin-top:8px;
+	display: inline-block;
 }

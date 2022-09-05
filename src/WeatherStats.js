@@ -1,15 +1,15 @@
 import React from "react";
 import Dateupdate from "./Dateupdate";
 import WeatherIcon from "./WeatherIcon";
-
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherStats(props) {
   return (
     <div className="WeatherStats">
       <h1 className="mt-3">{props.data.city}</h1>
-      <WeatherIcon code={props.data.icon}/>
-      <span className="temperature">{Math.round(props.data.temperature)}</span>
-      <span className="units">°C</span>
+      <WeatherIcon code={props.data.icon} />
+      <WeatherTemperature celsius={props.data.temperature} />
+
       <div className="row mt-2">
         <div className="col-6">
           <ul>
