@@ -34,6 +34,7 @@
 	vertical-align: top;
 	font-size: 48px;
 	margin-left: 5px;
+	position: relative;
 }
 
 .Weather .units {
@@ -45,6 +46,6 @@
 }
 
 .Weather canvas {
-	margin-top:8px;
+	margin-top: 8px;
 	display: inline-block;
 }
