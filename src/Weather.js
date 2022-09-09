@@ -3,6 +3,7 @@ import axios from "axios";
 import { ProgressBar } from "react-loader-spinner";
 import "./Weather.css";
 import WeatherStats from "./WeatherStats";
+import WeatherForecast from "./WeatherForecast"
 
 export default function Weather(props) {
   const [weatherInfo, setWeatherInfo] = useState({ ready: false });
@@ -60,6 +61,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherStats data={weatherInfo} />
+        <WeatherForecast />
       </div>
     );
   } else {

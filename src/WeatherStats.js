@@ -7,13 +7,9 @@ export default function WeatherStats(props) {
   return (
     <div className="WeatherStats">
       <h1 className="mt-3">{props.data.city}</h1>
-      <div className="clear-fix">
-        <div className="float-left">
-          <WeatherIcon code={props.data.icon} />
-        </div>
-        <div className="float-left">
-          <WeatherTemperature celsius={props.data.temperature} />
-        </div>
+      <div className=" d-flex">
+        <WeatherIcon code={props.data.icon} size={50} />
+        <WeatherTemperature celsius={props.data.temperature} />
       </div>
       <div className="row mt-2">
         <div className="col-6">
