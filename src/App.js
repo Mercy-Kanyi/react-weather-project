@@ -5,9 +5,12 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather city="Eldoret"/>
+        <Weather city="Eldoret" />
         <footer>
-          <a href="www.shecodes.io">Open-source code</a> by Mercy Kanyi
+          <a href="https://github.com/Mercy-Kanyi/react-weather-project" rel='no-referrer'>
+            Open-source code
+          </a>{" "}
+          by Mercy Kanyi
         </footer>
       </div>
     </div>
