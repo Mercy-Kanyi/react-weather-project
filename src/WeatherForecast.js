@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import WeatherForecastDay from "./WeatherForecastDay";
-import "./WeatherForecast.css"
+import "./WeatherForecast.css";
 import { Oval } from "react-loader-spinner";
 
 export default function WeatherForecast(props) {
@@ -13,17 +13,21 @@ export default function WeatherForecast(props) {
     setLoaded(true);
   }
   if (loaded) {
-    return(
-    <div className="WeatherForecast">
+    return (
+      <div className="WeatherForecast">
         <div className="row">
-          <div className="col">
-            <WeatherForecastDay data={forecastData[0]}/>
-          </div>
+          {forecastData.map(function (dailyForecast, index) {
+            if (index < 6) {
+            return (
+              <div className="col" key={index}>
+                <WeatherForecastDay data={dailyForecast} />
+              </div>
+            );}
+          })}
         </div>
       </div>
-    )
+    );
   } else {
-  
     let apiKey = "e9dbb073ecb679b0932ba8a75a3681c8";
     let longitude = props.coords.lon;
     let latitude = props.coords.lat;
